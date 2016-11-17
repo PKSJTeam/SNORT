@@ -1,3 +1,4 @@
+# Laporan Tugas 4
 ## Instalasi
 ### Install SNORT
 ##### Update Dependencies
@@ -31,10 +32,18 @@ sudo make install
 cd ../
 ```
 
-#### 1. Cara Gampang
+
+#### 2. Cara Gampang
 ```sh
 sudo apt-get install snort
 ```
+Dengan cara ini, rules sudah ada di 
+```sh
+/etc/snort/snort.conf
+```
+jadi untuk menggunakan rules tinggal include direktori *snort.conf* di atas
+
+
 
 ### Install IDSWakeup
 #### Install Dependencies
