@@ -31,7 +31,20 @@ make
 sudo make install
 cd ../
 ```
-
+#### Membuat SNORT sebagai NIDS
+Update shared library
+```sh
+sudo ldconfig
+```
+Tambahkan symbolic link
+```sh
+sudo ln -s /usr/local/bin/snort /usr/sbin/snort
+```
+Gandakan konfigurasi ke **/etc/snort/**
+```sh
+sudo cp ~/snort_src/snort-2.9.8.0/etc/*.conf* /etc/snort
+sudo cp ~/snort_src/snort-2.9.8.0/etc/*.map /etc/snort
+```
 
 #### 2. Cara Gampang
 ```sh
@@ -39,9 +52,9 @@ sudo apt-get install snort
 ```
 Dengan cara ini, rules sudah ada di 
 ```sh
-/etc/snort/snort.conf
+/etc/snort/
 ```
-jadi untuk menggunakan rules tinggal include direktori *snort.conf* di atas
+jadi untuk menggunakan rules tinggal include file yang ada di direktori di atas
 
 
 
