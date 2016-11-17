@@ -64,7 +64,7 @@ IDSWakeup butuh beberapa dependencies sebelum dijalankan
 ```
 sudo apt-get install --yes build-essential autoconf libtool make libnet1
 ```
-Untuk jaga-jaga IDSWakeup butuh libnet1, maka install libnet1 
+Untuk jaga-jaga IDSWakeup butuh libnet1, maka install libnet1
 ```sh
 mkdir idswakeup
 
@@ -79,6 +79,7 @@ sudo make install
 
 cd ../
 ```
+
 Download dan install IDSWakeup
 ```sh
 wget http://www.hsc.fr/ressources/outils/idswakeup/download/IDSwakeup-1.0.tgz -O IDSwakeup-1.0.tgz
@@ -90,4 +91,12 @@ cd IDSwakeup-1.0
 make
 
 cd ..
+```
+
+**Perhatian: peran libnet di sini sangat penting. Untuk libnet terbaru, iwu.c memiliki sedikit code yang tidak sinergis dengan versi libnet yang terbaru maka perlu sedikit perbaruan**
+Edit iwu.c hapus dan semua variabel terkait
+```c
+libnet_init_packet()
+libnet_open_raw_sock()
+libnet_do_checksum()
 ```
