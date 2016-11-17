@@ -7,28 +7,25 @@ Update Dependencies
 ```sh
 sudo apt-get install build-essential libpcap-dev libpcre3-dev libdumbnet-dev bison flex zlib1g-dev libdnet
 ```
-Download daq
+Download dan install daq
 ```sh
 wget https://www.snort.org/downloads/snort/daq-2.0.6.tar.gz
-```
-Extract daq
-```sh
+
 tar -xvzf daq-2.0.6.tar.gz
 cd daq-2.0.6
-```
-Install daq
-```sh
+
 ./configure
 make
 sudo make install
+cd ../
 ```
-Download snort
+Download dan install snort
 ```sh
-cd ~/snort_src
 wget https://www.snort.org/downloads/snort/snort-2.9.8.0.tar.gz
-```
-Install snort
-```sh
+
+tar -xvzf snort-2.9.8.0.tar.gz
+cd snort-2.9.8.0
+
 ./configure --enable-sourcefire
 make
 sudo make install
